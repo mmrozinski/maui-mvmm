@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ZTP_Maui_MVVM.ViewModels"
+             x:Class="ZTP_Maui_MVVM.Views.NewProductView"
+             x:DataType="viewModels:NewProductViewModel">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            <Entry Text="{Binding Product.Name}" />
+            <Entry Text="{Binding Product.Description}" />
+            <Entry Text="{Binding Product.Quantity}" />
+            <Entry Text="{Binding Product.Price}" />
+            <Button 
+                Text="Save"
+                Command="{Binding AddCommand}"
+                Margin="0, 10" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
