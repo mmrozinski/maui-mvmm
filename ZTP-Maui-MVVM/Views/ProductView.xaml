@@ -4,7 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ZTP_Maui_MVVM.ViewModels"
              x:Class="ZTP_Maui_MVVM.Views.ProductView"
-             x:DataType="viewModels:ProductViewModel">
+             x:DataType="viewModels:ProductViewModel"
+             Title="Edit Product"
+             Shell.BackgroundColor="BlueViolet"
+             Shell.TitleColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout Padding="30">
             <ActivityIndicator IsRunning="{Binding IsBusy}" />

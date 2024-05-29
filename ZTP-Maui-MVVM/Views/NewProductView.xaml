@@ -4,14 +4,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ZTP_Maui_MVVM.ViewModels"
              x:Class="ZTP_Maui_MVVM.Views.NewProductView"
-             x:DataType="viewModels:NewProductViewModel">
+             x:DataType="viewModels:NewProductViewModel"
+             Title="Add New Product"
+             Shell.BackgroundColor="BlueViolet"
+             Shell.TitleColor="WhiteSmoke">
     <ContentPage.Content>
-        <StackLayout Padding="30">
-            <ActivityIndicator IsRunning="{Binding IsBusy}" />
-            <Entry Text="{Binding Product.Name}" />
-            <Entry Text="{Binding Product.Description}" />
-            <Entry Text="{Binding Product.Quantity}" />
-            <Entry Text="{Binding Product.Price}" />
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" Padding="30" HorizontalOptions="Fill">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+                <Grid HorizontalOptions="Fill">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Text="Name" VerticalOptions="Center" />
+                    <Label Grid.Column="0" Grid.Row="1" Text="Name" VerticalOptions="Center" />
+                    <Label Grid.Column="0" Grid.Row="2" Text="Name" VerticalOptions="Center" />
+                    <Label Grid.Column="0" Grid.Row="3" Text="Name" VerticalOptions="Center" />
+
+                    <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Product.Name}" HorizontalOptions="Fill" />
+                    <Entry Grid.Column="1" Grid.Row="1" Text="{Binding Product.Description}" HorizontalOptions="Fill" />
+                    <Entry Grid.Column="1" Grid.Row="2" Text="{Binding Product.Quantity}" HorizontalOptions="Fill" />
+                    <Entry Grid.Column="1" Grid.Row="3" Text="{Binding Product.Price}" HorizontalOptions="Fill" />
+                </Grid>
+            </StackLayout>
             <Button 
                 Text="Save"
                 Command="{Binding AddCommand}"

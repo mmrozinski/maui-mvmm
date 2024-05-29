@@ -5,11 +5,14 @@
              xmlns:viewModels="clr-namespace:ZTP_Maui_MVVM.ViewModels"
              xmlns:models="clr-namespace:ZTP_Maui_MVVM.Models"
              x:Class="ZTP_Maui_MVVM.Views.ProductListView"
-             x:DataType="viewModels:ProductListViewModel">
+             x:DataType="viewModels:ProductListViewModel"
+             Title="Product List"
+             Shell.BackgroundColor="BlueViolet"
+             Shell.TitleColor="WhiteSmoke">
     <VerticalStackLayout
         Padding="30">
         <ActivityIndicator IsRunning="{Binding IsBusy}" />
-        <ListView ItemsSource="{Binding Products}" ItemSelected="ListView_OnItemSelected">
+        <ListView ItemsSource="{Binding Products}" ItemSelected="ListView_OnItemSelected" RowHeight="70">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="models:Product">
                     <ViewCell>
